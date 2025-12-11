@@ -519,8 +519,7 @@ connectDB();
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
 
 if (process.env.NODE_ENV === "development") {
     app.use(morgan("dev"));
@@ -536,6 +535,8 @@ app.use(
     credentials: true,
   })
 );
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // --- GEMINI CHATBOT ROUTE START ---
 app.post("/api/chat", async (req, res) => {
