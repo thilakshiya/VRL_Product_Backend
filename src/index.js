@@ -529,7 +529,7 @@ if (process.env.NODE_ENV === "development") {
 // Allow connections from your Frontend
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:3000","https://vrl-product-frontend-zwiz.vercel.app/login"], 
+    origin: ["http://localhost:5173", "http://localhost:3000","https://vrl-product-frontend-zwiz.vercel.app"], 
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
